@@ -1,0 +1,308 @@
+@font-face {
+  font-family: "Anton";
+  src: url("../fonts/AntonSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --background-color: #f7f2eb;
+  --primary-color: #264f3d;
+  --secondary-color: #db2123;
+  --text-color: #2a2a2a;
+  --card-color: #fefefe;
+  --easy-tag: #d0e6c9;
+  --medium-tag: #fdde8d;
+
+  --font-family: helvetica neue, helvetica, sans-serif;
+  --font-heading: "Anton", sans-serif;
+
+  --font-size-small: 12px;
+  --font-size-medium: 16px;
+  --font-size-large: 20px;
+  --font-size-xlarge: 35px;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 16px;
+    background-color: var(--background-color);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------
+   GAME PAGE
+------------------------- */
+
+.game-page {
+    max-width: 600px;
+    margin: 0 auto;
+
+    min-height: 100vh;
+}
+
+/* -------------------------
+   HERO
+------------------------- */
+
+.game-hero {
+    position: relative;
+    width: 100%;
+}
+
+#game-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* -------------------------
+   BACK BUTTON
+------------------------- */
+
+.back-btn {
+    position: absolute;
+    top: 25px;
+    left: 18px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: white;
+
+    font-size: 45px;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+
+    cursor: pointer;
+}
+
+/* -------------------------
+   GAME INFO
+------------------------- */
+
+.game-info {
+     position: relative;
+
+    margin-top: -20px;
+
+
+    border-radius: 25px 25px 0 0;
+
+    padding: 25px 20px 30px;
+
+    z-index: 2;
+}
+
+#game-title {
+    font-size: var(--font-size-xlarge);
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    color: var(--text-color);
+}
+
+/* -------------------------
+   TAGS
+------------------------- */
+
+#game-genre,
+#game-difficulty, #game-language {
+    display: inline-block;
+
+    padding: 10px 10px;
+
+    border-radius: 15px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-right: 10px;
+    margin-bottom: -10px;
+
+}
+
+/* Genre */
+
+#game-genre {
+    background-color: var(--easy-tag);
+    color: var(--text-color);
+}
+
+/* Difficulty */
+
+#game-difficulty {
+    background-color: #e9e4dc;
+    color: var(--text-color);
+}
+
+#game-language {
+   background-color: #e9e4dc;
+    color: var(--text-color);
+}
+
+/* -------------------------
+   DETAILS
+------------------------- */
+
+.game-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+.detail {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 0 10px;
+}
+
+/* lodret streg */
+
+.detail:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 5px;
+
+    width: 2px;
+    height: 75px;
+
+    background-color: #C8C8C8;
+}
+
+/* SVG ikoner */
+
+.detail-icon {
+    width: 28px;
+    height: 28px;
+
+    margin-bottom: 8px;
+}
+
+/* tal */
+
+.detail p {
+    margin: 0;
+
+    font-size: var(--font-size-medium);
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+/* tekst under tal */
+
+.detail span {
+    margin-top: 5px;
+
+    font-size: var(--font-size-medium);
+    line-height: 1.2;
+
+    color: var(--text-color);
+}
+
+/* -------------------------
+   DESCRIPTION
+------------------------- */
+
+.game-description {
+    margin-bottom: 30px;
+    background-color: var(--card-color);
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.game-rules {
+  margin-bottom: 30px;
+  background-color: var(--card-color);
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.game-description h3,
+.game-rules h3 {
+    font-size: var(--font-size-large);
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+    font-family: var(--font-heading);
+
+    color: var(--text-color);
+}
+
+.game-description p,
+.game-rules p {
+    font-size: 17px;
+    line-height: 1.5;
+    font-family: var(--font-family);
+
+    color: var(--text-color);
+}
+
+/* -------------------------
+   BOOK BUTTON
+------------------------- */
+
+.book-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 50px;
+
+    padding: 18px 25px;
+
+    border-radius: 35px;
+
+    background-color: var(--secondary-color);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: var(--font-size-large);
+
+    font-family: var(--font-heading);
+    letter-spacing: 3px;
+}
