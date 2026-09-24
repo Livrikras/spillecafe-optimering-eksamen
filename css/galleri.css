@@ -1,0 +1,661 @@
+@font-face {
+  font-family: "Anton";
+  src: url("../fonts/AntonSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --background-color: #f7f2eb;
+  --primary-color: #264f3d;
+  --secondary-color: #db2123;
+  --text-color: #2a2a2a;
+  --card-color: #fefefe;
+  --easy-tag: #d0e6c9;
+  --medium-tag: #fdde8d;
+
+  --font-family: helvetica neue, helvetica, sans-serif;
+  --font-heading: "Anton", sans-serif;
+
+  --font-size-small: 12px;
+  --font-size-medium: 16px;
+  --font-size-large: 20px;
+  --font-size-xlarge: 35px;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* body */
+.spilgalleri-body {
+  min-height: 100vh;
+
+  background: var(--background-color);
+
+  font-family: var(--font-family);
+
+  color: var(--text-color);
+}
+
+.app {
+  width: 100%;
+
+  min-height: 100vh;
+
+  background: var(--primary-color);
+
+  overflow-x: hidden;
+}
+
+/* header */
+
+.cafe-header {
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  color: white;
+}
+
+.cafe-header h1 {
+  margin: 0;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
+}
+
+.back-btn {
+  width: 32px;
+
+  height: 40px;
+
+  border: none;
+
+  background: none;
+
+  color: white;
+
+  font-size: 42px;
+
+  line-height: 30px;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+/* img */
+
+.cafe-image {
+  width: 100%;
+
+  height: 145px;
+
+  overflow: hidden;
+}
+
+.cafe-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* adresse */
+
+.address-bar {
+  height: 48px;
+
+  background: white;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 12px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.address-icon {
+  font-size: 16px;
+
+  color: #111;
+}
+
+/* tabs */
+
+.tabs {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 12px 7px 8px;
+
+  background: var(--background-color);
+}
+
+.tab {
+  flex: 1;
+
+  height: 45px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: #e9e4dc;
+
+  color: #333;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #08764f;
+
+  color: white;
+}
+
+/* søg */
+.search-section {
+  padding: 5px 7px 8px;
+
+  background: var(--background-color);
+}
+
+.search-box {
+  height: 53px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 12px;
+
+  box-shadow: var(--shadow);
+}
+
+.search-icon {
+  font-size: 35px;
+
+  line-height: 1;
+
+  transform: rotate(-20deg);
+
+  margin-right: 7px;
+}
+
+#search-input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  color: var(--text-color);
+}
+
+#search-input::placeholder {
+  color: #777;
+}
+
+/* =====================================================
+   FILTRE
+   ===================================================== */
+
+/* Selve filterområdet */
+.filter-panel {
+  background-color: var(--background-color);
+
+  padding: 16px 5px;
+
+  display: grid;
+
+  /* 3 filtre pr. række */
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 5px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   DROPDOWNS
+   ===================================================== */
+
+.filter-panel select {
+  width: 100%;
+  min-width: 0;
+
+  height: 32px;
+
+  padding: 0 30px 0 12px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background-color: var(--primary-color);
+
+  color: white;
+
+  font-family: var(--font-family);
+
+  font-size: var(--font-size-small);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  box-sizing: border-box;
+
+  /* Pil */
+  background-image:
+    linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 15px) 22px,
+    calc(100% - 10px) 22px;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+}
+
+/* Hover */
+.filter-panel select:hover {
+  background-color: #1f684d;
+}
+
+.filter-group select {
+  width: 100%;
+  height: 32px;
+
+  padding: 0 32px 0 14px;
+
+  border: none;
+  border-radius: 30px;
+
+  background-color: var(--primary-color);
+  color: white;
+
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  appearance: none;
+
+  /* Pil */
+  background-image:
+    linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 16px) 22px,
+    calc(100% - 11px) 22px;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+
+  /* Gør at teksten kan vises */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+/* =====================================================
+   RYD FILTRE
+   ===================================================== */
+
+.clear-filters {
+  display: none;
+
+  width: 100%;
+  height: 32px;
+
+  padding: 0 10px;
+
+  border: 2px solid var(--primary-color);
+
+  border-radius: 30px;
+
+  background-color: transparent;
+
+  color: var(--primary-color);
+
+  font-family: var(--font-family);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Vises kun når der er valgt et filter */
+.clear-filters.show {
+  display: block;
+}
+
+/* Hover på ryd-knappen */
+.clear-filters:hover {
+  background-color: var(--primary-color);
+
+  color: white;
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 768px) {
+  .filter-panel {
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 18px 10px;
+
+    gap: 12px;
+  }
+
+  .clear-filters {
+    grid-column: 1 / -1;
+
+    width: 180px;
+
+    justify-self: center;
+  }
+}
+
+/* spil sektion */
+.games-section {
+  background: var(--background-color);
+
+  padding: 8px 7px 30px;
+}
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin: 0 4px 8px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: 20px;
+}
+
+#game-count {
+  font-size: 13px;
+
+  color: #4d4c4c;
+}
+
+/* liste af spil */
+.game-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+/* spil cards */
+.game-card {
+  min-height: 110px;
+
+  display: flex;
+
+  align-items: stretch;
+
+  background: white;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+
+  position: relative;
+}
+
+/* IMAGE */
+
+.game-image {
+  width: 105px;
+
+  min-width: 105px;
+
+  height: 110px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* CONTENT */
+
+.game-info {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 8px 8px 7px 12px;
+}
+
+.game-title {
+  margin: 0 30px 5px 0;
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+/* TAGS */
+
+.game-tags {
+  display: flex;
+
+  gap: 7px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 7px;
+}
+
+.tag {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 25px;
+
+  padding: 3px 10px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.genre-tag {
+  background: #d0e6c9;
+}
+
+.difficulty-tag {
+  background: #f7f2eb;
+}
+
+/* META */
+
+.game-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  font-size: 12px;
+
+  color: #444;
+}
+
+.meta-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.meta-icon {
+  font-size: 16px;
+}
+
+/* no results */
+.no-results {
+  display: none;
+
+  margin: 30px 10px;
+
+  text-align: center;
+
+  color: #555;
+}
+
+.no-results.show {
+  display: block;
+}
+
+/* computer */
+@media (min-width: 768px) {
+  .spilgalleri-body {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    background: #e9eef5;
+  }
+
+  .app {
+    width: 430px;
+
+    height: 850px;
+
+    min-height: 850px;
+
+    max-height: 850px;
+
+    border-radius: 28px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  }
+
+  .cafe-header {
+    height: 68px;
+  }
+
+  .cafe-header h1 {
+    font-size: 22px;
+  }
+
+  .cafe-image {
+    height: 150px;
+  }
+
+  .game-list {
+    gap: 11px;
+  }
+}
+
+/* Ikoner på cards i galleriet */
+.meta-item img {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 16px;
+}
+
+.meta-icon {
+    display: flex;
+    align-items: center;
+}
