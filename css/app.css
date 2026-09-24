@@ -1,1 +1,514 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('../fonts/AntonSC-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --background-color: #F7F2EB;
+  --primary-color: #264F3D;
+  --secondary-color: #DB2123;
+  --text-color: #2A2A2A;
+  --card-color: #FEFEFE;
+  --easy-tag: #D0E6C9;
+  --medium-tag: #FDDE8D;
+
+  --font-family: helvetica neue, helvetica , sans-serif;
+  --font-heading:'Anton', sans-serif;
+  --font-size-small: 12px;
+  --font-size-medium: 16px;
+  --font-size-large: 20px;
+  --font-size-xlarge: 35px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+   --shadow:
+        0 5px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* -------------------------- Welcome page ----------------- */
+.welcom-page {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: var(--background-color);
+
+    font-family: var(--font-family);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 30px 25px;
+}
+
+.welcom-page img {
+    width: 75%;
+    max-width: 300px;
+    height: auto;
+
+    display: block;
+
+    margin-bottom: 80px;
+}
+
+/* start knap */
+.start-btn {
+
+    width: 100%;
+    max-width: 350px;
+
+    min-height: 58px;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: var(--font-size-medium);
+
+    font-weight: var(--font-weight-bold);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hover */
+
+.start-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px
+        rgba(0, 0, 0, 0.20);
+}
+
+/* Når knappen trykkes */
+
+.start-btn:active {
+
+    transform: scale(0.97);
+}
+
+/* computer */
+@media (min-width: 1000px) {
+    body.welcom-page {
+
+        width: 430px;
+        height: 850px;
+
+        min-height: 850px;
+
+        margin: 0;
+
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        background-color: var(--background-color);
+
+        border-radius: 30px;
+
+        padding: 50px 30px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+}
+
+/* -------------------------- Lokation----------------------------- */
+
+.location-titel h1{
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xlarge);
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.location-titel p{
+    font-size: var(--font-size-medium);
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.location-body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: var(--primary-color);
+
+    font-family: var(--font-family);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* MAIN */
+
+.location-main {
+    width: 100%;
+    max-width: 430px;
+
+    box-sizing: border-box;
+
+    padding: 20px 16px 0;
+}
+
+/* LOKATIONER */
+
+.locations {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.locations h2 {
+    font-family: var(--font-heading);
+
+    font-size: var(--font-size-large);
+
+    color: var(--text-color);
+
+    margin: 0 0 10px;
+}
+
+.locations p {
+    font-size: var(--font-size-medium);
+
+    color: var(--text-color);
+
+    margin: 0 0 20px;
+}
+
+.location-grid {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    padding: 0;
+    margin: 0;
+}
+
+/* LOCATION CARDS */
+
+.location-card {
+    background-color: var(--card-color);
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.20);
+}
+
+.location-card a {
+    display: block;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+/* BILLEDER */
+
+.location-card img {
+    width: 100%;
+
+    aspect-ratio: 1.6 / 1;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* =====================================================
+   TEKST
+   ===================================================== */
+
+.location-content {
+    min-height: 55px;
+
+    padding: 7px 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-content h3 {
+    margin: 0;
+
+    font-size: 13px;
+
+    font-weight: var(--font-weight-bold);
+
+    color: var(--text-color);
+}
+
+.location-content p {
+    margin: 2px 0 0;
+
+    font-size: 10px;
+
+    color: var(--text-color);
+}
+
+.arrow {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: var(--text-color);
+}
+
+/* =====================================================
+   QUICK FILTERS
+   ===================================================== */
+
+.quick-filters {
+    width: 100%;
+    max-width: 430px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 25px 16px 30px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.quick-filters::-webkit-scrollbar {
+    display: none;
+}
+
+/* =====================================================
+   FILTER KNAPPER
+   ===================================================== */
+
+.quick-filter {
+    flex: 0 0 100px;
+
+    height: 150px;
+
+    box-sizing: border-box;
+
+    background-color: var(--card-color);
+
+    border-radius: 20px;
+
+    padding: 15px 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: var(--text-color);
+
+    font-family: var(--font-family);
+
+    font-size: 15px;
+
+    font-weight: var(--font-weight-bold);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.quick-filter:hover {
+    transform: translateY(-3px);
+}
+
+/* IKON */
+
+.filter-icon {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 768px) {
+
+    .location-body {
+        padding: 30px 0;
+    }
+
+    /*
+       Selve appen bliver stadig
+       mobil-lignende på computer
+    */
+
+    .location-main {
+        width: 430px;
+        max-width: 430px;
+
+        padding: 25px 18px 0;
+    }
+
+    .location-grid {
+        gap: 12px;
+    }
+
+    .location-content {
+        min-height: 65px;
+
+        padding: 8px 10px;
+    }
+
+    .location-content h3 {
+        font-size: 16px;
+    }
+
+    .location-content p {
+        font-size: 12px;
+    }
+
+    .arrow {
+        font-size: 24px;
+    }
+
+    /*
+       Filtrene ligger UNDER
+       de fire lokationer
+    */
+
+    .quick-filters {
+        width: 430px;
+        max-width: 430px;
+
+        padding:
+            25px 18px 35px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 10px;
+
+        overflow: visible;
+    }
+
+    .quick-filter {
+        width: 100%;
+
+        height: 140px;
+
+        min-width: 0;
+
+        padding: 10px 5px;
+
+        border-radius: 18px;
+
+        font-size: 14px;
+    }
+
+    .filter-icon {
+        font-size: 28px;
+
+        margin-bottom: 8px;
+    }
+}
+
+/* =====================================================
+   MEGET SMÅ TELEFONER
+   ===================================================== */
+
+@media (max-width: 360px) {
+
+    .location-main {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .location-grid {
+        gap: 8px;
+    }
+
+    .location-content {
+        min-height: 48px;
+        padding: 6px;
+    }
+
+    .location-content h3 {
+        font-size: 12px;
+    }
+
+    .location-content p {
+        font-size: 9px;
+    }
+
+    .arrow {
+        font-size: 19px;
+    }
+
+    .quick-filters {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .quick-filter {
+        flex-basis: 90px;
+        height: 130px;
+
+        font-size: 13px;
+    }
+}
 
