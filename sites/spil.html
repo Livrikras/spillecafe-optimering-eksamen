@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spilcafé</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+    <main class="game-page">
+        <header class="game-header">
+            <button class="back-btn" onclick="history.back()" aria-label="Gå tilbage">‹</button>
+        <section class="game-hero">
+            <img id="game-image" src="" alt="">
+
+            <div class="game-info">
+              <h1 id="game-title"></h1>
+              <h2 id="game-genre"></h2>
+              <h2 id="game-difficulty"></h2>
+              <h2 id="game-language"></h2>
+
+            </div>
+        </section>
+
+        <section class="game-details">
+            <div class="detail">
+                <img src="../img/person.svg" alt="" class="detail-icon">
+                <p id="game-players"></p>
+                <span>Spillere</span>
+            </div>
+
+            <div class="detail">
+                <img src="../img/time.svg" alt="" class="detail-icon">
+                <p id="game-playtime"></p>
+                 <span>Minutter</span>
+            </div>
+
+            <div class="detail">
+                <img src="../img/person.svg" alt="" class="detail-icon">
+                <p id="game-age"></p>
+                <span>År</span>
+            </div>
+        </section>
+
+        <section class="game-description">
+            <h3>Beskrivelse</h3>
+            <p id="game-description"></p>
+        </section>
+
+        <section class="game-rules">
+            <h3>Regler</h3>
+            <p id="game-rules"></p>
+        </section>
+
+        <a id="book-btn" class="book-btn" href="#">Book et bord</a>
+    </main>
+
+    <script src="../js/game-site.js"></script>
+</body>
+</html>
