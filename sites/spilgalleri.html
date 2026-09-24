@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/galleri.css" />
+    <title>Spilgalleri</title>
+  </head>
+    <body class="spilgalleri-body">
+      <main class="app">
+        <header class="cafe-header">
+
+          <button class="back-btn" onclick="history.back()" aria-label="Gå tilbage">‹</button>
+
+          <h1>Aarhus – Vestergade</h1>
+
+        </header>
+
+        <div class="cafe-image">
+          <img src="../img/location-1.webp" alt="Spilcaféen Vestergade" loading="lazy" />
+        </div>
+
+        <div class="address-bar">
+
+          <span class="address-icon">●</span>
+
+          <span> Vestergade 58A, 8000 Aarhus C</span>
+
+        </div>
+
+
+      <!-- SØG -->
+        <section class="search-section">
+
+          <div class="search-box">
+
+            <span class="search-icon">⌕</span>
+
+            <input type="text" id="search-input" placeholder="Søg efter spil i denne café..." autocomplete="off" aria-label="Søg efter spil i denne café">
+
+          </div>
+
+        </section>
+
+          <!-- FILTRE -->
+        <section id="filter-panel" class="filter-panel">
+
+          <select id="difficulty-select" aria-label="Vælg sværhedsgrad">
+            <option value="all">Sværhedsgrad</option>
+            <option value="Let">Let</option>
+            <option value="Mellem">Mellem</option>
+            <option value="Svær">Svær</option>
+          </select>
+
+          <select id="age-select" aria-label="Vælg alder">
+            <option value="all">Alder</option>
+            <option value="6">6+</option>
+            <option value="7">7+</option>
+            <option value="8">8+</option>
+            <option value="10">10+</option>
+            <option value="18">18+</option>
+          </select>
+
+          <select id="genre-select" aria-label="Vælg genre">
+            <option value="all">Genre</option>
+            <option value="Familie">Familie</option>
+            <option value="Strategi">Strategi</option>
+            <option value="Kortspil">Kortspil</option>
+            <option value="Terning">Terning</option>
+            <option value="Mysterie">Mysterie</option>
+            <option value="Party">Party</option>
+            <option value="Ordspil">Ordspil</option>
+            <option value="Abstract">Abstract</option>
+            <option value="Fliselægning">Fliselægning</option>
+            <option value="Kooperativt">Kooperativt</option>
+          </select>
+
+          <select id="playtime-select" aria-label="Vælg spilletid">
+            <option value="all">Spilletid</option>
+            <option value="15">15+ min</option>
+            <option value="30">30+ min</option>
+            <option value="45">45+ min</option>
+            <option value="60">60+ min</option>
+            <option value="90">90+ min</option>
+            <option value="120">120+ min</option>
+          </select>
+
+          <select id="player-count-select" aria-label="Vælg antal spillere">
+            <option value="all">Antal spillere</option>
+            <option value="1">1 spiller</option>
+            <option value="2">2 spillere</option>
+            <option value="3">3 spillere</option>
+            <option value="4">4 spillere</option>
+            <option value="5">5+ spillere</option>
+          </select>
+
+          <button type="button" id="clear-filters" class="clear-filters" aria-label="Ryd filtre">x Ryd filtre</button>
+        </section>
+
+
+         <!-- SPIL -->
+        <section class="games-section">
+
+          <div class="section-heading">
+
+            <h2>Spil</h2>
+
+            <span id="game-count"></span>
+
+          </div>
+
+          <div id="game-list" class="game-list"></div>
+
+        </section>
+
+
+      </main>
+
+    <script src="../js/app.js"></script>
+  </body>
+</html>
