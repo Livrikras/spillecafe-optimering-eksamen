@@ -153,11 +153,12 @@ function displayGames(games) {
 
   // Opret kort
   games.forEach((game) => {
-    const card = document.createElement("button");
+    const card = document.createElement("a");
     // Titlen på spillet på engelsk eller dansk
     const titleLanguage = game.language === "English" ? "en" : "da";
 
     card.className = "game-card";
+    card.href = `spil.html?id=${game.id}`;
 
     card.innerHTML = `
 

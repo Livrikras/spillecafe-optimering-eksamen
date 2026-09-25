@@ -659,3 +659,34 @@ body {
     display: flex;
     align-items: center;
 }
+
+/* spil cards */
+.game-card {
+  min-height: 110px;
+
+  display: flex;
+
+  align-items: stretch;
+
+  background: white;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+
+  position: relative;
+
+  /* fordi card nu er et <a> */
+  text-decoration: none;
+  color: inherit;
+
+  cursor: pointer;
+}
+
+/* Keyboard navigation */
+.game-card:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 3px;
+}
